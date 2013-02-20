@@ -15,16 +15,12 @@
 
 Important: The functionality provided in this package must be manually
 integrated into your string extraction script/tool.
-
-$Id$
 """
-__docformat__ = "reStructuredText"
-import os.path
+import os
 
 from z3c.csvvocabulary import vocabulary
 
-def _extractCsvStrings(arg, dirname, fnames):
-    catalog, basepath, exclude_dirs = arg
+def _extractCsvStrings(dirname, fnames, catalog, basepath, exclude_dirs):
     # Make sure we have a data directory
     if os.path.split(dirname)[-1] != 'data':
         return
@@ -52,5 +48,6 @@ def csvStrings(path, base_dir, exclude_dirs=()):
     """
     catalog = {}
     exclude_dirs = [os.path.join(path, dir) for dir in exclude_dirs]
-    os.path.walk(path, _extractCsvStrings, (catalog, base_dir, exclude_dirs))
+    for dirname, subnames, fnames in os.walk(path):
+        _extractCsvStrings(dirname, fnames, catalog, base_dir, exclude_dirs)
     return catalog

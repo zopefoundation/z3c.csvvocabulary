@@ -17,14 +17,26 @@ $Id$
 """
 __docformat__ = "reStructuredText"
 import doctest
+import re
 import unittest
+from zope.testing import renormalizing
 from zope.testing.doctestunit import DocFileSuite, pprint
+
+checker = renormalizing.RENormalizing([
+    # Python 2 unicode strings add a "u".
+    (re.compile("u('.*?')"),
+     r"\1"),
+    # Python 3 renamed type to class.
+    (re.compile("<type "),
+     r"<class "),
+    ])
+
 
 def test_suite():
     return unittest.TestSuite((
         DocFileSuite('README.txt',
                      optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS,
-                     globs={'pprint': pprint}
+                     globs={'pprint': pprint}, checker=checker
                      ),
         ))
 

@@ -12,8 +12,6 @@
 #
 ##############################################################################
 """Setup
-
-$Id$
 """
 import os
 from setuptools import setup, find_packages
@@ -23,7 +21,7 @@ def read(*rnames):
 
 setup (
     name='z3c.csvvocabulary',
-    version='1.1.0',
+    version='2.0.0dev',
     author = "Zope Community",
     author_email = "zope-dev@zope.org",
     description = "A package to create vocabularies based on CSV files.",
@@ -41,15 +39,21 @@ setup (
     keywords = "zope3 vocabulary csv",
     classifiers = [
         'Development Status :: 5 - Production/Stable',
-        'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
-        'Programming Language :: Python',
         'Natural Language :: English',
         'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP',
         'Framework :: Zope3'],
-    url = 'http://svn.zope.org/z3c.csvvocabulary',
+    url = 'https://pypi.python.org/pypi/z3c.csvvocabulary',
     packages = find_packages('src'),
     include_package_data = True,
     package_dir = {'':'src'},
@@ -62,6 +66,7 @@ setup (
         'zope.i18nmessageid',
         'zope.schema',
         ],
-    dependency_links = ['http://download.zope.org/distribution'],
+    tests_require = ['zope.testing'],
+    test_suite = 'z3c.csvvocabulary.tests.test_suite',
     zip_safe = False,
     )

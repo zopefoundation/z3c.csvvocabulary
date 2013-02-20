@@ -61,10 +61,10 @@ Of course, it is not always acceptable to make 'zope' the domain of the
 message. You can specify the message factory when initializing the vocabulary:
 
   >>> from zope.i18nmessageid import MessageFactory
-  >>> exampleDomain = MessageFactory('example')
+  >>> exampleDomain = MessageFactory(u'example')
 
   >>> samples = z3c.csvvocabulary.CSVVocabulary(csvfile, exampleDomain)
-  >>> term1 = samples.getTerm('value1')
+  >>> term1 = samples.getTerm(u'value1')
   >>> term1.title.domain
   'example'
 
