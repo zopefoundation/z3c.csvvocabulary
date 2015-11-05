@@ -4,3 +4,6 @@ build/
 dist/
 *.egg-info/
 .tox/
+.coverage
+coverage.xml
+nosetests.xml
