@@ -100,7 +100,7 @@ strings from the CSV files in a particular sub-tree. Here we just want to make
 sure that the function completes and some dummy data from the testing package
 will be used:
 
-  >>> basedir = os.path.dirname(z3c.__file__)
+  >>> basedir = os.path.dirname(path)
 
   >>> catalog = z3c.csvvocabulary.csvStrings(path, basedir)
   >>> pprint(catalog)
