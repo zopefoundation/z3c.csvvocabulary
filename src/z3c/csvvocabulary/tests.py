@@ -11,16 +11,13 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""Base Components test setup
-
-$Id$
-"""
-__docformat__ = "reStructuredText"
 import doctest
 import re
 import unittest
+from pprint import pprint
+
 from zope.testing import renormalizing
-from zope.testing.doctestunit import DocFileSuite, pprint
+
 
 checker = renormalizing.RENormalizing([
     # Python 2 unicode strings add a "u".
@@ -29,16 +26,18 @@ checker = renormalizing.RENormalizing([
     # Python 3 renamed type to class.
     (re.compile("<type "),
      r"<class "),
-    ])
+])
 
 
 def test_suite():
-    return unittest.TestSuite((
-        DocFileSuite('README.txt',
-                     optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS,
-                     globs={'pprint': pprint}, checker=checker
-                     ),
-        ))
+    return unittest.TestSuite([
+        doctest.DocFileSuite(
+            'README.txt',
+            optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+            globs={'pprint': pprint},
+            checker=checker,
+        ),
+    ])
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')
