@@ -26,14 +26,14 @@ setup (
     author_email = "zope-dev@zope.org",
     description = "A package to create vocabularies based on CSV files.",
     long_description=(
-        read('README.txt')
+        read('README.rst')
         + '\n' +
         'Detailed Documentation\n'
         '**********************\n'
         + '\n' +
-        read('src', 'z3c', 'csvvocabulary', 'README.txt')
+        read('src', 'z3c', 'csvvocabulary', 'README.rst')
         + '\n' +
-        read('CHANGES.txt')
+        read('CHANGES.rst')
         ),
     license = "ZPL 2.1",
     keywords = "zope3 vocabulary csv",
