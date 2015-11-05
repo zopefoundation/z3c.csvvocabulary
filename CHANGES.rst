@@ -5,7 +5,9 @@ Change History
 2.0.1 (unreleased)
 ------------------
 
-- Standardize namespace __init__
+- Standardize namespace __init__.
+
+- Claim support for Python 3.4.
 
 
 2.0.0 (2013-02-19)
