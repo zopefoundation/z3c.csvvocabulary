@@ -53,7 +53,7 @@ setup (
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP',
-        'Framework :: Zope3'],
+        'Framework :: Zope :: 3'],
     url = 'https://pypi.python.org/pypi/z3c.csvvocabulary',
     packages = find_packages('src'),
     include_package_data = True,
