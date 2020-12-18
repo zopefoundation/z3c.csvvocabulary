@@ -20,6 +20,7 @@ import os
 
 from z3c.csvvocabulary import vocabulary
 
+
 def _extractCsvStrings(dirname, fnames, catalog, basepath, exclude_dirs):
     # Make sure we have a data directory
     if os.path.split(dirname)[-1] != 'data':

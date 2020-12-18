@@ -38,6 +38,3 @@ def test_suite():
             checker=checker,
         ),
     ])
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
