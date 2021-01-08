@@ -58,7 +58,7 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP',
         'Framework :: Zope :: 3'],
-    url='https://pypi.python.org/pypi/z3c.csvvocabulary',
+    url='https://https://github.com/zopefoundation/z3c.csvvocabulary',
     packages=find_packages('src'),
     include_package_data=True,
     package_dir={'': 'src'},
@@ -72,6 +72,5 @@ setup(
         'zope.schema',
     ],
     tests_require=['zope.testing'],
-    test_suite='z3c.csvvocabulary.tests.test_suite',
     zip_safe=False,
 )
