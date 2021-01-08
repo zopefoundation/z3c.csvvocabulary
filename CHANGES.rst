@@ -2,13 +2,14 @@
 Change History
 ==============
 
-2.0.1 (unreleased)
+2.1.0 (unreleased)
 ------------------
 
+- Add support for Python 3.5, 3.6, 3.7, 3.8 and 3.9.
+
+- Drop support for Python 2.6 and 3.3.
+
 - Standardize namespace __init__.
-
-- Claim support for Python 3.4.
-
 
 2.0.0 (2013-02-19)
 ------------------

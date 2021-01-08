@@ -16,15 +16,17 @@
 import os
 from setuptools import setup, find_packages
 
+
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-setup (
+
+setup(
     name='z3c.csvvocabulary',
-    version='2.0.1.dev0',
-    author = "Zope Community",
-    author_email = "zope-dev@zope.org",
-    description = "A package to create vocabularies based on CSV files.",
+    version='2.1.0.dev0',
+    author="Zope Community",
+    author_email="zope-dev@zope.org",
+    description="A package to create vocabularies based on CSV files.",
     long_description=(
         read('README.rst')
         + '\n' +
@@ -34,10 +36,10 @@ setup (
         read('src', 'z3c', 'csvvocabulary', 'README.rst')
         + '\n' +
         read('CHANGES.rst')
-        ),
-    license = "ZPL 2.1",
-    keywords = "zope3 vocabulary csv",
-    classifiers = [
+    ),
+    license="ZPL 2.1",
+    keywords="zope3 vocabulary csv",
+    classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
@@ -45,29 +47,30 @@ setup (
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP',
         'Framework :: Zope :: 3'],
-    url = 'https://pypi.python.org/pypi/z3c.csvvocabulary',
-    packages = find_packages('src'),
-    include_package_data = True,
-    package_dir = {'':'src'},
-    namespace_packages = ['z3c'],
-    extras_require = dict(
-        test = ['zope.testing'],
-        ),
-    install_requires = [
+    url='https://https://github.com/zopefoundation/z3c.csvvocabulary',
+    packages=find_packages('src'),
+    include_package_data=True,
+    package_dir={'': 'src'},
+    namespace_packages=['z3c'],
+    extras_require=dict(
+        test=['zope.testing'],
+    ),
+    install_requires=[
         'setuptools',
         'zope.i18nmessageid',
         'zope.schema',
-        ],
-    tests_require = ['zope.testing'],
-    test_suite = 'z3c.csvvocabulary.tests.test_suite',
-    zip_safe = False,
-    )
+    ],
+    tests_require=['zope.testing'],
+    zip_safe=False,
+)

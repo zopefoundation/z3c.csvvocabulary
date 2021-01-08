@@ -1,0 +1,27 @@
+# Generated from:
+# https://github.com/zopefoundation/meta/tree/master/config/pure-python
+[meta]
+template = "pure-python"
+commit-id = "d71f6ca3a0bef54f9e0f55be9027951306fb46dc"
+
+[python]
+with-pypy = true
+with-legacy-python = true
+with-docs = false
+with-sphinx-doctests = false
+with-appveyor = false
+
+[coverage]
+fail-under = 83
+
+[flake8]
+additional-config = [
+    "# F401 imported but unused",
+    "per-file-ignores =",
+    "    src/z3c/csvvocabulary/__init__.py: F401",
+    ]
+
+[manifest]
+additional-rules = [
+    "recursive-include src *.csv",
+    ]
