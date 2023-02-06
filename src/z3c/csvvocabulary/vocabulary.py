@@ -20,8 +20,9 @@ import csv
 import os.path
 import sys
 
-from zope.schema import vocabulary
 from zope.i18nmessageid import MessageFactory
+from zope.schema import vocabulary
+
 
 PY3 = sys.version_info[0] == 3
 
