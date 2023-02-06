@@ -43,16 +43,16 @@ As you can see, the vocabulary automatically prefixes the value:
   'value1'
 
   >>> term1.title
-  u'sample-value1'
+  'sample-value1'
 
 While it looks like the title is the wrong unicode string, it is really an
 I18n message:
 
   >>> type(term1.title)
-  <type 'zope.i18nmessageid.message.Message'>
+  <class 'zope.i18nmessageid.message.Message'>
 
   >>> term1.title.default
-  u'Title 1'
+  'Title 1'
 
   >>> term1.title.domain
   'zope'
@@ -61,10 +61,10 @@ Of course, it is not always acceptable to make 'zope' the domain of the
 message. You can specify the message factory when initializing the vocabulary:
 
   >>> from zope.i18nmessageid import MessageFactory
-  >>> exampleDomain = MessageFactory(u'example')
+  >>> exampleDomain = MessageFactory('example')
 
   >>> samples = z3c.csvvocabulary.CSVVocabulary(csvfile, exampleDomain)
-  >>> term1 = samples.getTerm(u'value1')
+  >>> term1 = samples.getTerm('value1')
   >>> term1.title.domain
   'example'
 
@@ -82,14 +82,14 @@ By default the vocabulary expects the csv file to be latin1 encoded.
   >>> csvfile = os.path.join(path, 'testing', 'data', 'utf-8.csv')
   >>> wrongEncoding = z3c.csvvocabulary.CSVVocabulary(csvfile)
   >>> wrongEncoding.getTerm('ae').title.default
-  u'\xc3\xa4'
+  '\xc3\xa4'
 
 If you csv file has a different encoding you can specify it explicitly:
 
   >>> utf8Encoded = z3c.csvvocabulary.CSVVocabulary(csvfile, encoding='utf-8')
   >>> term = utf8Encoded.getTerm('ae')
   >>> term.title.default
-  u'\xe4'
+  '\xe4'
 
 
 CSV Message String Extraction
@@ -104,10 +104,10 @@ will be used:
 
   >>> catalog = z3c.csvvocabulary.csvStrings(path, basedir)
   >>> pprint(catalog)
-  {u'sample-value1': [('...sample.csv', 1)],
-   u'sample-value2': [('...sample.csv', 2)],
-   u'sample-value3': [('...sample.csv', 3)],
-   u'sample-value4': [('...sample.csv', 4)],
-   u'sample-value5': [('...sample.csv', 5)],
-   u'utf-8-ae': [('...utf-8.csv', 1)],
-   u'utf-8-oe': [('...utf-8.csv', 2)]}
+  {'sample-value1': [('...sample.csv', 1)],
+   'sample-value2': [('...sample.csv', 2)],
+   'sample-value3': [('...sample.csv', 3)],
+   'sample-value4': [('...sample.csv', 4)],
+   'sample-value5': [('...sample.csv', 5)],
+   'utf-8-ae': [('...utf-8.csv', 1)],
+   'utf-8-oe': [('...utf-8.csv', 2)]}

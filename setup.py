@@ -27,7 +27,7 @@ setup(
     name='z3c.csvvocabulary',
     version='3.0.dev0',
     author="Zope Community",
-    author_email="zope-dev@zope.org",
+    author_email="zope-dev@zope.dev",
     description="A package to create vocabularies based on CSV files.",
     long_description=(
         read('README.rst')
@@ -67,6 +67,7 @@ setup(
     extras_require=dict(
         test=['zope.testing'],
     ),
+    python_requires='>=3.7',
     install_requires=[
         'setuptools',
         'zope.i18nmessageid',
