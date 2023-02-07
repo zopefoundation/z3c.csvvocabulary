@@ -11,19 +11,13 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""CSV Vocabulary Implementation
-
-$Id$
-"""
-__docformat__ = "reStructuredText"
+"""CSV Vocabulary Implementation"""
 import csv
 import os.path
-import sys
 
-from zope.schema import vocabulary
 from zope.i18nmessageid import MessageFactory
+from zope.schema import vocabulary
 
-PY3 = sys.version_info[0] == 3
 
 _ = MessageFactory('zope')
 
@@ -32,19 +26,11 @@ def CSVVocabulary(filename, messageFactory=_, encoding='latin1'):
     # Create a prefix
     prefix = os.path.split(filename)[-1][:-4]
     # Open a file and read the data
-    if PY3:
-        f = open(filename, 'r', encoding=encoding)
-    else:
-        f = open(filename, 'r')
-    # Py3: The big problem here is that the Py2 CSV Reader is not unicode
-    # aware, so we must handle everything in bytes, but in Py3 it is exactely
-    # the opposite and we are forced decode to unicode early.
+    f = open(filename, encoding=encoding)
     reader = csv.reader(f, delimiter=";")
     # Create the terms and the vocabulary
     terms = []
     for id, title in reader:
-        if not PY3:
-            title = title.decode(encoding)
         term = vocabulary.SimpleTerm(
             id, title=messageFactory(prefix+'-'+id, default=title))
         terms.append(term)

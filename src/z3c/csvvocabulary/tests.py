@@ -12,21 +12,8 @@
 #
 ##############################################################################
 import doctest
-import re
 import unittest
 from pprint import pprint
-
-from zope.testing import renormalizing
-
-
-checker = renormalizing.RENormalizing([
-    # Python 2 unicode strings add a "u".
-    (re.compile("u('.*?')"),
-     r"\1"),
-    # Python 3 renamed type to class.
-    (re.compile("<type "),
-     r"<class "),
-])
 
 
 def test_suite():
@@ -35,6 +22,5 @@ def test_suite():
             'README.rst',
             optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
             globs={'pprint': pprint},
-            checker=checker,
         ),
     ])

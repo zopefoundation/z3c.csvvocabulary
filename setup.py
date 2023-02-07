@@ -14,7 +14,9 @@
 """Setup
 """
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages
+from setuptools import setup
 
 
 def read(*rnames):
@@ -23,9 +25,9 @@ def read(*rnames):
 
 setup(
     name='z3c.csvvocabulary',
-    version='2.1.0.dev0',
+    version='3.0.dev0',
     author="Zope Community",
-    author_email="zope-dev@zope.org",
+    author_email="zope-dev@zope.dev",
     description="A package to create vocabularies based on CSV files.",
     long_description=(
         read('README.rst')
@@ -46,18 +48,17 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP',
-        'Framework :: Zope :: 3'],
+        'Framework :: Zope :: 3',
+    ],
     url='https://https://github.com/zopefoundation/z3c.csvvocabulary',
     packages=find_packages('src'),
     include_package_data=True,
@@ -66,6 +67,7 @@ setup(
     extras_require=dict(
         test=['zope.testing'],
     ),
+    python_requires='>=3.7',
     install_requires=[
         'setuptools',
         'zope.i18nmessageid',
