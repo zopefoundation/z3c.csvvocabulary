@@ -5,15 +5,10 @@ Change History
 3.0 (unreleased)
 ----------------
 
-- Add support for Python 3.10, 3.11.
+- Add support for Python 3.7, 3.8, 3.9, 3.10, 3.11.
 
-- Drop support for Python 2.7, 3.5, 3.6.
+- Drop support for Python 2.6, 2.7, 3.3.
 
-- Add support for Python 3.5, 3.6, 3.7, 3.8 and 3.9.
-
-- Drop support for Python 2.6 and 3.3.
-
-- Standardize namespace __init__.
 
 2.0.0 (2013-02-19)
 ------------------
